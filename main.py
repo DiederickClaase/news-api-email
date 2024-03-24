@@ -20,8 +20,8 @@ for article in content["articles"]:
         body = body + article["title"] + "\n" + article["description"] + 2*"\n"
 
 print(body)
-body.encode("utf-8")
+
+body.encode("UTF-8")
+body = body.encode('ascii', 'ignore').decode('ascii')
 send_email(message=body)
-
-
 
